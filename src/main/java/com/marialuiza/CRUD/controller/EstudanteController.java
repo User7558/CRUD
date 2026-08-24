@@ -29,12 +29,13 @@ public class EstudanteController {
     }
 
     @GetMapping("/buscar")
-    public ResponseEntity<List<EstudanteEntity>> buscarEstudante(@RequestParam Long id) {
+    public ResponseEntity<EstudanteEntity> buscarEstudante(@RequestParam Long id) {
         return ResponseEntity.ok().body(estudanteService.BuscarEstudante(id));
     }
 
     @PutMapping("/alterar")
-    public ResponseEntity<EstudanteEntity> alterarEstudante(@RequestBody EstudanteEntity estudanteEntity, @RequestParam int matricula) {
+    public ResponseEntity<List<EstudanteEntity>> alterarEstudante(@RequestBody EstudanteEntity estudanteEntity,
+                                                             @RequestParam int matricula) {
         return ResponseEntity.accepted().body(estudanteService.AlterarEstudante(estudanteEntity, matricula));
     }
 }

@@ -37,7 +37,7 @@ public class EstudanteService {
     }
 
     // GET
-    public List<EstudanteEntity> BuscarEstudante(Long id){
+    public EstudanteEntity BuscarEstudante(Long id){
         try {
             return estudanteRepository.findById(id);
         } catch (Exception e) {
@@ -46,7 +46,7 @@ public class EstudanteService {
     }
 
     // PUT
-    public EstudanteEntity AlterarEstudante(EstudanteEntity estudanteEntity,int matricula){
+    public List<EstudanteEntity> AlterarEstudante(EstudanteEntity estudanteEntity,int matricula){
         EstudanteEntity estudante = estudanteRepository.findByMatricula(matricula);
 
         if(Objects.isNull(estudante)) {

@@ -10,7 +10,7 @@ import java.util.List;
 public interface EstudanteRepository extends JpaRepository<EstudanteEntity, Long> {
     EstudanteEntity findByMatricula(int matricula);
     EstudanteEntity findByEmail(String email);
-    List<EstudanteEntity> findById(Long id);
+    //List<EstudanteEntity> findById(Long id);
 
     @Transactional
     void deleteByMatricula(int matricula);
