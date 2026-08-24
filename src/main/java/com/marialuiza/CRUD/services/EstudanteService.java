@@ -39,7 +39,7 @@ public class EstudanteService {
     // GET
     public List<EstudanteEntity> BuscarEstudante(Long id){
         try {
-            return estudanteRepository.findById(id).get();
+            return estudanteRepository.findById(id);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
